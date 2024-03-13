@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Colors */
+:root {
+    --dark: #192D52;
+    --pink: #ED556E;
+    --white: white;
+    --gray: rgb(160, 160, 160);
+    --green: #49a73d;
+}
+
+/* General Rules */
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active, a:focus, a:hover {
+    color: var(--pink);
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 7rem 0 5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    padding: 3rem 0 5rem;
+   
+}
+
+h1, h2 {
+    color: var(--dark);
+    text-align: center;
+}
+
+nav ul {
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+li {
+    list-style: none;
+}
+
+.main-block {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    padding: 0rem 15rem 7rem;
+}
+
+.contact {
+    font-weight: bold;
+    color: var(--pink);
+    white-space: nowrap;
+}
+
+button {
+    border-radius: 25px;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.7s ease;
+}
+
+button:active, button:focus, button:hover {
+    box-shadow: 0px 4px 8px var(--gray); /* horizontal offset, vertical offset, blur radius, and color of the shadow, respectively */
+    color: var(--dark);
+}
+
+/* Header */
+header nav {
+    margin: 0 15rem 0 auto;
+    max-width: calc(50% - 15rem);
+}
+
+header a {
+    color: var(--dark);
+}
+
+/* About */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+  
+.item1 {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 7rem 0 0 0;
+}
+  
+.item2 {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 3rem 0 0 0;
+}  
+  
+.item3 {
+    grid-column: 2;
+    grid-row: span 2;
+    display: flex;
+    justify-self: end;;
+    align-items: center;
+}
+
+.register {
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+img {
+    height: 400px;
+}
+
+/* Venue */
+iframe {
+    margin: 2rem auto 0 25%;
+    width: 50%;
+    height: 600px;
+    align-self: center;
+
+}
+
+/* FAQ */
+.faq::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 8px 0px 8px 12px;
+    border-color: transparent transparent transparent var(--pink);
+    transition: transform 0.5s;
+}
+
+.rotate::before {
+    transform: translateY(-50%) rotate(90deg); /* Add rotation transformation */
+}
+
+.faq {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.answer {
+    overflow: hidden;
+    padding-left: 50px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth transition for max-height and opacity */
+}
+
+.show-answer {
+    max-height: 1000px; /* Set a large max-height to expand smoothly */
+    opacity: 1; /* Set opacity to fully visible */
+}
+
+
+/* Register */
+form {
+    border: 2px dashed var(--dark);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    width: 50%;
+}
+
+.question-block {
+    margin-bottom: 1rem;
+}
+
+form input, select {
+    display: block;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.submit {
+    background-color: var(--green);
+    color: var(--white);
+} /* добавить всплывающее сообщение */
+
+.radiogroup input {
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    width: 15px;
+    vertical-align: middle;
+}
+
+input::placeholder {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+option.selected {
+    color: rgb(150, 12, 12); /* Change text color */
+    background-color: rgb(6, 136, 56); /* Change background color */
+}
+/* Contact */
+.main-block:last-of-type {
+    padding-bottom: 30rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+}
+
+footer nav {
+    margin: 0 auto 0 15rem;
+    max-width: calc(50% - 15rem);
+}
+
+footer a {
+    color: var(--white);
+}
+
+footer p {
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 0 3rem 0;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+#messageContainer {
+    margin-top: 20px;
+  }
+  
+  #submittedMessage {
+    color: green;
+  }

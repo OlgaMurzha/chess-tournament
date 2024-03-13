@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+       
+        <h1  id="about">Welcome to Chess Tournament 2024!</h1>
+
+        <div class="main-block">
+            <div class="grid-container">
+                <div class="item item1">The Tournament was founded in 2016 and since that time takes place every year.
+                        It's a good opportunity to face rivals offline, feel the true spirit of a competition,
+                        and learn new people.</div>
+                <div class="item item2"><a href="#register"><button class="register">Register</button></a></div>
+                <div class="item item3"><img src="img\men-playing-chess.jpg" alt="men playing chess"></div>
+            </div>
+        </div>
+        
+        <div class="main-block">
+            <h2 id="venue">Venue</h2>
+            <p class="venue-description">Like all the previous years, the Tournament will take place at the <span class="contact">Hauptbücherei, Urban-Loritz-Platz 2a, 1070 Wien</span>.</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2659.2096821022037!2d16.337486!3d48.202577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07f3f975bedf%3A0x4064c0dbd0ad74b0!2sHauptb%C3%BCcherei!5e0!3m2!1sen!2sat!4v1707682845073!5m2!1sen!2sat"
+            width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- менять язык согласно настройкам браузера -->
+        </div>
+        
+        <div class="main-block">
+            <h2 id="faq">FAQ</h2>
+            <ul>
+                <li class="faq" id="question1" onclick="showAnswer('answer1')">How much does it cost?</li>
+                <div class="answer" id="answer1">The Tournament is free of charge and has always been.</div>
+                
+                <li class="faq" id="question2" onclick="showAnswer('answer2')">Is the Tournament beginner-friendly?</li>
+                <div class="answer" id="answer2">Yes, it is open for anybody who wishes to come, but the registration is required. You are very welcome to join us, even if you have never played a tournament.</div>
+                
+                <li class="faq" id="question3" onclick="showAnswer('answer3')">Are there any age limitations? May I bring my children?</li>
+                <div class="answer" id="answer3">We would like to create a convenient environment for our chess players, that is why people under 12 are allowed as participants only. There are no other age limitations.</div>
+                
+                <li class="faq" id="question4" onclick="showAnswer('answer4')">What's the duration of the Tournament?</li>
+                <div class="answer" id="answer4">According to our experience, it takes three hours or more depending on the number of participants.</div>
+                
+                <li class="faq" id="question5" onclick="showAnswer('answer5')">Are there any awards?</li>
+                <div class="answer" id="answer5">There are no money awards, but all players get participation certificates — and three best players get cup trophies and presents from our partners.</div>
+            </ul>
+        </div>        
+
+        <div class="main-block">
+            <h2 id="register">Register</h2>
+            <p>If you want to join the Tournament as a player, please fill in the following form:</p>
+            <form id="myForm">
+                <div class="question-block">
+                    <label for="first-name">First name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                </div>
+                <div class="question-block">
+                    <label for="last-name">Last name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                </div>
+                <div class="question-block">
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="question-block">
+                    <p>Have you ever participated in a tournament?</p>
+                        <div class="radiogroup">
+                            <input type="radio" id="participation-true" name="participation">
+                            <label for="participation-true" class="inline">Yes</label>
+                        </div>
+
+                        <div class="radiogroup">
+                            <input type="radio" id="participation-false" name="participation">
+                            <label for="participation-false" class="inline">No</label>
+                        </div>
+                </div>
+                <div class="question-block">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="question-block">
+                <label for="rating">What's your rate?</label>
+                    <select name="rating" id="rating" required>
+                        <option value="don&#39;t-know">I don't know</option>
+                        <option value="below-1000">Below 1000</option>
+                        <option value="1000—1499">1000—1499</option>
+                        <option value="1500—1999">1500—1999</option>
+                        <option value="2000—2499">2000—2499</option>
+                        <option value="2500—2700">2500—2700</option>
+                        <option value="2700+">2700+</option> 
+                        <!-- выбранную опцию — другим цветом -->
+                    </select>
+                </div>
+                <button class="submit" type="submit" id="submitButton">Submit</button>
+            </form>
+            <div id="messageContainer" style="display: none;">
+                <p id="submittedMessage">Message submitted!</p>
+              </div>
+        </div>
+
+        <div class="main-block">
+            <h2 id="contact">Contact</h2>
+            <p>If you still have any questions, please feel free to contact us: <span class="contact">+43 123 12345678</span>
+                or <span class="contact">chess-information@gmail.com</span>.</p>
+                <!-- позвонить, отправить письмо при клике на. -->
+        </div>
+
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+        <p>© Copyright 2024</p>
+    </footer>
+</body>
+</html>
